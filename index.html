@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous"> -->
+    <!-- google fonts -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"> -->
+    <!-- Font Awesome -->
+    <link href="css/font.min.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+
+    <title>Get a random meal</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="askMeal text-center">
+            <h3>Feeling Hungry?</h3>
+            <h5>Get a random meal by clicking below</h5>
+            <button class="btn btn-info btn-lg" id="getMeal">Get Meal 🍔</button>
+          </div>
+        </div>
+
+        <div id="meal">
+          <div class="row">
+            <div class="col-md-4">
+              <img
+                alt=""
+                class="img-fluid"
+
+              />
+              <p >Category: <span id="cat"></span></p>
+              <p >Area: <span id="area"></span></p>
+              <p >Tags: <span id="tag"></span></p>
+              <h4>Ingredients:</h4>
+              <ul style="list-style-type:circle;" id="ingredients"> </ul>
+            </div>
+            <div class="col-md-8">
+              <h3 id="mealName"></h3>
+              <p id="description"></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <iframe
+                width="100%"
+                height="500"
+                id="video"
+              >
+              </iframe>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
