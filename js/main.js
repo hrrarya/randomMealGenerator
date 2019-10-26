@@ -6,14 +6,16 @@ const img = document.querySelector("#meal img");
 const cat = document.getElementById("cat");
 const area = document.getElementById("area");
 const tag = document.getElementById("tag");
-const ingredients = document.getElementById("ingredients");
+
 const mealName = document.getElementById("mealName");
 const desc = document.getElementById("description");
 const video = document.getElementById("video");
+const ingredients = document.getElementById("ingredients");
 let ingred = [];
-// console.log(img);
 
 getMeal.addEventListener("click", function() {
+  let ingredientItem = '';
+  let i= 1;
   fetch(MEAL_API)
     .then(res => res.json())
     .then(({ meals }) => {
@@ -32,15 +34,18 @@ getMeal.addEventListener("click", function() {
         .filter(
           item => item.startsWith("strIngredient") && meals[0][item] !== ""
         )
-        .map((ingredient, i) => {
+        .map((ingredient) => {
           // Checking measure undefined or not
           let measure =
             typeof meals[0][`strMeasure${i}`] === "undefined"
               ? ""
               : meals[0][`strMeasure${i}`];
 
-          ingredients.innerHTML += `<li>${meals[0][ingredient]}- ${measure}
+          ingredientItem += `<li>${meals[0][ingredient]}- ${measure}
           </li>`;
+          i++;
         });
+        ingredients.innerHTML = ingredientItem;
+        console.log(meals[0])
     });
 });
